@@ -21,6 +21,11 @@ class Livro(models.Model):
     def get_absolute_url(self):
         return reverse('livro-detalhe', args=[str(self.id)])
 
+    def display_genero(self):
+        return ', '.join(genero.name for genero in self.genero.all()[:3])
+    
+    display_genero.short_description = 'Genero'
+
 class LivroInstancia(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     livro = models.ForeignKey(Livro, on_delete=models.SET_NULL, null=True)
@@ -45,7 +50,7 @@ class LivroInstancia(models.Model):
         ordering = ['retorno']
     
     def __str__(self):
-        return f'{self.id} ({self.livro.titulo})'
+        return f'{self.livro.titulo}'
 
 class Autor(models.Model):
     nome = models.CharField(max_length=100)
