@@ -1,0 +1,54 @@
+{% extends 'base_generic.html' %}
+
+{%block content %}
+  <div class="px-2 py-2 pt-md-4 pb-md-3 mx-auto text-left">
+    <h1 class='display-4'>Home</h1>
+  </div>
+  <div class="px-1 py-1 pt-md-3 pb-md-2 mx-auto text-center">
+    <h2 class=''>Nossos conteudos</h2>
+    <p>A biblioteca tem as seguintes contagens de registros</p>
+  </div>
+  <div class='container'>
+    <div class='card-deck mb-4 text-center'>
+      <div class="card mb-3 box-shadow">
+        <div class='card-header'>
+          <h4 class='my-0 font-weight-normal'>Livros</h4>
+        </div>
+        <div class='card-body'>
+          <h1>{{ num_livros }}</h1>
+          <button class="btn btn-lg btn-block btn-primary">Acesse aqui</button>
+        </div>
+      </div>
+
+      <div class="card mb-3 box-shadow">
+        <div class='card-header'>
+          <h4 class='my-0 font-weight-normal'>Cópias</h4>
+        </div>
+        <div class='card-body'>
+          <h1>{{num_livro_instancias}}</h1>
+          <button class="btn btn-lg btn-block btn-primary">Acesse aqui</button>
+        </div>
+      </div>
+
+      <div class="card mb-3 box-shadow">
+        <div class='card-header'>
+          <h4 class='my-0 font-weight-normal'>Livros Liberados</h4>
+        </div>
+        <div class='card-body'>
+          <h1>{{num_instancia_livre}}</h1>
+          <button class="btn btn-lg btn-block btn-primary">Acesse aqui</button>
+        </div>
+      </div>
+
+      <div class="card mb-3 box-shadow">
+        <div class='card-header'>
+          <h4 class='my-0 font-weight-normal'>Autores</h4>
+        </div>
+        <div class='card-body'>
+          <h1>{{num_autor}}</h1>
+          <button class="btn btn-lg btn-block btn-primary">Acesse aqui</button>
+        </div>
+      </div>
+    </div>
+  </div>    
+{% endblock %}
